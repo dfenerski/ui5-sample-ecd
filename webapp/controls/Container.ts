@@ -42,7 +42,7 @@ export default class Container extends Control {
     public insertItem(item: Item, index: number): this {
         console.error("CONTAINER: insertItem");
         this.insertAggregation("items", item, index, true);
-        // Obtain DOM references
+        // Obtain DOM ref
         const domRef = this.getDomRef();
         // If not rendered, or an invisible item - we need to invalidate
         if (!domRef || !item.getVisible()) {
@@ -60,7 +60,7 @@ export default class Container extends Control {
     }
 
     public removeItem(item: Item | number | string): Item | null {
-        console.error("CONTAINER: insertItem");
+        console.error("CONTAINER: removeItem");
         const removedItem = <Item | null>(
             this.removeAggregation("items", item, true)
         );
