@@ -47,7 +47,6 @@ export default class Container extends Control {
         // If not rendered, or an invisible item - we need to invalidate
         if (!domRef || !item.getVisible()) {
             this.invalidate();
-            //
             return this;
         }
         // Prepare render manager instance
