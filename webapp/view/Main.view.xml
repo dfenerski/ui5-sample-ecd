@@ -1,30 +1,26 @@
 <mvc:View
-	controllerName="com.github.dfenerski.ui5_sample_ecd.controller.Main"
-	displayBlock="true"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:core="sap.ui.core"
-	core:require="{
+    controllerName="com.github.dfenerski.ui5_sample_ecd.controller.Main"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:ecdsample="com.github.dfenerski.ui5_sample_ecd.controls"
+    core:require="{
 		formatter: 'com/github/dfenerski/ui5_sample_ecd/model/formatter'
 	}">
 
-	<Page
-		title="{i18n>appTitle}"
-		id="page">
-		<content>
-			<IllustratedMessage
-				title="{i18n>appTitle}"
-				illustrationType="sapIllus-SuccessHighFive"
-				enableVerticalResponsiveness="true"
-				description="{i18n>appDescription}">
-				<additionalContent>
-					<Button
-						id="helloButton"
-						text="{formatter: 'formatter.formatValue', path: 'i18n>btnText'}"
-						press="sayHello" />
-				</additionalContent>
-			</IllustratedMessage>
-		</content>
-	</Page>
+    <Page
+        title="{i18n>appTitle}"
+        id="page">
+        <content>
+            <ecdsample:Container items="{path: 'local>/items', templateShareable: false}">
+                <ecdsample:items>
+                    <ecdsample:Item text="{local>text}" />
+                </ecdsample:items>
+            </ecdsample:Container>
+            <Button text="Add item" press=".handleItemAddition" />
+            <Button text="Remove item" press=".handleItemRemoval" />
+        </content>
+    </Page>
 
 </mvc:View>
