@@ -1,15 +1,12 @@
-import MessageBox from "sap/m/MessageBox";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import BaseController from "./BaseController";
+import { CustomLogger } from "../util/CustomUiLogger";
+import models from "../model/models";
 
 /**
  * @namespace com.github.dfenerski.ui5_sample_ecd.controller
  */
 export default class Main extends BaseController {
-    public sayHello(): void {
-        MessageBox.show("Hello World!");
-    }
-
     public handleItemAddition() {
         const localModel = <JSONModel>this.getModel("local");
         const items = <{ text: string }[]>localModel.getProperty("/items");
@@ -24,5 +21,18 @@ export default class Main extends BaseController {
             "/items",
             items.filter((_, i) => i !== lastItemIndex)
         );
+    }
+
+    public resetLogger() {
+        CustomLogger.reset();
+    }
+
+    public resetModel() {
+        this.setModel(models.createLocalModel(), "local");
+    }
+
+    public handleRender() {
+        this.byId("containerV2").rerender();
+        this.byId("containerV4").rerender();
     }
 }

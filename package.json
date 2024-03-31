@@ -12,6 +12,7 @@
 		"start-cdn": "ui5 serve --port 8080 -o index-cdn.html",
 		"start:dist": "npm start -- --config ui5-dist.yaml",
 		"start:dist-cdn": "npm run start-cdn -- --config ui5-dist.yaml",
+		"ui5:cctrl-watch": "npx @ui5/ts-interface-generator --watch",
 		"ts-typecheck": "tsc --noEmit",
 		"lint": "eslint webapp",
 		"karma": "karma start",
@@ -41,5 +42,8 @@
 		"ui5-middleware-livereload": "^3.0.2",
 		"ui5-tooling-transpile": "^3.3.3",
 		"wdio-ui5-service": "^2.0.6"
+	},
+	"dependencies": {
+		"ui5-cc-md": "^0.0.7"
 	}
 }

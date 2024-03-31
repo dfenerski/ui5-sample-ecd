@@ -1,6 +1,7 @@
 import Device from "sap/ui/Device";
 import UIComponent from "sap/ui/core/UIComponent";
 import models from "./model/models";
+import { CustomLogger } from "./util/CustomUiLogger";
 
 /**
  * @namespace com.github.dfenerski.ui5_sample_ecd
@@ -21,6 +22,9 @@ export default class Component extends UIComponent {
 
         // create dummy local model
         this.setModel(models.createLocalModel(), "local");
+
+        // add logger model
+        this.setModel(CustomLogger.jsonModel, "logger");
 
         // create the views based on the url/hash
         this.getRouter().initialize();
