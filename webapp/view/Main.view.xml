@@ -16,7 +16,7 @@
             <Panel width="auto" height="500px" class="sapUiResponsiveMargin" accessibleRole="Region">
                 <headerToolbar>
                     <OverflowToolbar>
-                        <Button text="Force render" press=".handleForceRerender" />
+                        <Button text="Force rerender" press=".handleForceRerender" />
                         <Button text="Add item" press=".handleItemAddition" />
                         <Button text="Remove item" press=".handleItemRemoval" />
                         <Button text="Reset model" press=".handleResetModel" />
