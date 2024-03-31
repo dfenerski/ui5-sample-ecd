@@ -59,7 +59,7 @@ export default class ContainerV2 extends Control {
         }
         // Prepare render manager instance
         // Core.createRenderManager(); -> API is from v1.119; You can still do it yourself:
-        const rm = new RenderManager().getInterface();
+        const rm = new RenderManager().getInterface(); // technically, you do not required `.getInterface` it just replicates the `createRenderManager` implementation
         // Render new item
         rm.render(item, domRef);
         rm.destroy();
