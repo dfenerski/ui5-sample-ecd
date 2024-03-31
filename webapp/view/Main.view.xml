@@ -5,7 +5,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
     xmlns:md="cc.md"
-    xmlns:ecdsample="com.github.dfenerski.ui5_sample_ecd.controls"
+    xmlns:ecd="com.github.dfenerski.ui5_sample_ecd.controls"
     core:require="{
 		formatter: 'com/github/dfenerski/ui5_sample_ecd/model/formatter'
 	}">
@@ -35,36 +35,30 @@
                                         <MessageStrip
                                             text="{log>message}"
                                             type="{log>type}"
-                                            showIcon="true">
-                                        </MessageStrip>
+                                            showIcon="true"></MessageStrip>
                                     </CustomListItem>
                                     <layoutData>
                                         <FlexItemData
                                             minWidth="400px"
                                             maxWidth="400px"
-                                        >
-                                        </FlexItemData>
+                                        ></FlexItemData>
                                     </layoutData>
                                 </List>
-                                <ecdsample:ContainerV2
+                                <ecd:ContainerV2
                                     id="containerV2"
                                     items="{path: 'local>/items', templateShareable: false}">
-                                    <ecdsample:items>
-                                        <ecdsample:ItemV2 text="{local>text}" />
-                                    </ecdsample:items>
-                                </ecdsample:ContainerV2>
+                                    <ecd:ItemV2 text="{local>text}" />
+                                </ecd:ContainerV2>
                             </HBox>
                         </VBox>
                         <VBox>
                             <Title text="{i18n>titleApiVersion4}" />
                             <HBox class="contentBox2">
-                                <ecdsample:ContainerV4
+                                <ecd:ContainerV4
                                     id="containerV4"
                                     items="{path: 'local>/items', templateShareable: false}">
-                                    <ecdsample:items>
-                                        <ecdsample:ItemV4 text="{local>text}" />
-                                    </ecdsample:items>
-                                </ecdsample:ContainerV4>
+                                    <ecd:ItemV4 text="{local>text}" />
+                                </ecd:ContainerV4>
                                 <List
                                     backgroundDesign="Transparent"
                                     items="{log>/v4/}"
@@ -73,15 +67,13 @@
                                         <MessageStrip
                                             text="{log>message}"
                                             type="{log>type}"
-                                            showIcon="true">
-                                        </MessageStrip>
+                                            showIcon="true"></MessageStrip>
                                     </CustomListItem>
                                     <layoutData>
                                         <FlexItemData
                                             minWidth="400px"
                                             maxWidth="400px"
-                                        >
-                                        </FlexItemData>
+                                        ></FlexItemData>
                                     </layoutData>
                                 </List>
                             </HBox>
