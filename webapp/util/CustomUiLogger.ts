@@ -24,7 +24,7 @@ class CustomUiLogger {
             content.type = MessageType.Information;
         }
         const arr = this.jsonModel.getProperty("/v2") as Message[];
-        this.jsonModel.setProperty("/v2", arr.concat(content));
+        this.jsonModel.setProperty("/v2", [...arr, content]);
     }
 
     public addV4Message(content: Message) {
@@ -32,7 +32,7 @@ class CustomUiLogger {
             content.type = MessageType.Information;
         }
         const arr = this.jsonModel.getProperty("/v4") as Message[];
-        this.jsonModel.setProperty("/v4", arr.concat(content));
+        this.jsonModel.setProperty("/v4", [...arr, content]);
     }
 
     public reset() {

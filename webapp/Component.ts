@@ -24,7 +24,7 @@ export default class Component extends UIComponent {
         this.setModel(models.createLocalModel(), "local");
 
         // add logger model
-        this.setModel(CustomLogger.jsonModel, "logger");
+        this.setModel(CustomLogger.jsonModel, "log");
 
         // create the views based on the url/hash
         this.getRouter().initialize();

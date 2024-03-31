@@ -23,7 +23,7 @@ export default class Main extends BaseController {
         );
     }
 
-    public handleResetLogger() {
+    public handleResetLogs() {
         CustomLogger.reset();
     }
 

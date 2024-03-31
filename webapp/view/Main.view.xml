@@ -19,7 +19,7 @@
                         <Button text="Add item" press=".handleItemAddition" />
                         <Button text="Remove item" press=".handleItemRemoval" />
                         <Button text="Reset model" press=".handleResetModel" />
-                        <Button text="Reset logs" press=".handleResetLogger" />
+                        <Button text="Reset logs" press=".handleResetLogs" />
                     </OverflowToolbar>
                 </headerToolbar>
                 <content>
@@ -27,12 +27,12 @@
                         <VBox>
                             <Title text="Renderer API Version 2" />
                             <HBox class="contentBox1">
-                                <List backgroundDesign="Transparent" items="{logger>/v2/}"
+                                <List backgroundDesign="Transparent" items="{log>/v2/}"
                                     noDataText="Interact with the UI!">
                                     <CustomListItem>
                                         <MessageStrip
-                                            text="{logger>message}"
-                                            type="{logger>type}"
+                                            text="{log>message}"
+                                            type="{log>type}"
                                             showIcon="true">
                                         </MessageStrip>
                                     </CustomListItem>
@@ -63,12 +63,12 @@
                                         <ecdsample:ItemV4 text="{local>text}" />
                                     </ecdsample:items>
                                 </ecdsample:ContainerV4>
-                                <List backgroundDesign="Transparent" items="{logger>/v4/}"
+                                <List backgroundDesign="Transparent" items="{log>/v4/}"
                                     noDataText="Interact with the UI!">
                                     <CustomListItem>
                                         <MessageStrip
-                                            text="{logger>message}"
-                                            type="{logger>type}"
+                                            text="{log>message}"
+                                            type="{log>type}"
                                             showIcon="true">
                                         </MessageStrip>
                                     </CustomListItem>
