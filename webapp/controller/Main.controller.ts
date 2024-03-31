@@ -1,7 +1,7 @@
 import JSONModel from "sap/ui/model/json/JSONModel";
-import BaseController from "./BaseController";
-import { CustomLogger } from "../util/CustomUiLogger";
 import models from "../model/models";
+import { CustomLogger } from "../util/CustomUiLogger";
+import BaseController from "./BaseController";
 
 /**
  * @namespace com.github.dfenerski.ui5_sample_ecd.controller
@@ -28,6 +28,7 @@ export default class Main extends BaseController {
     }
 
     public handleResetModel() {
+        CustomLogger.reset();
         this.setModel(models.createLocalModel(), "local");
     }
 
