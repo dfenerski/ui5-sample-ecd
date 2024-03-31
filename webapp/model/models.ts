@@ -25,5 +25,5 @@ export default {
         });
         oModel.setDefaultBindingMode(BindingMode.TwoWay);
         return oModel;
-    },
+    }
 };

@@ -1,0 +1,22 @@
+.container {
+	width: 200px;
+	padding: 5px;
+	background-color: #fff;
+	border-radius: 5px;
+	margin: 0 15px 0 15px;
+	height: fit-content;
+}
+
+.contentBox1 {
+	background-color: hsl(210, 23%, 76%);
+	padding: 5px;
+	border-radius: 5px;
+	margin: 0 5px 0 0;
+}
+
+.contentBox2 {
+	background-color: hsl(210, 23%, 76%);
+	padding: 5px;
+	border-radius: 5px;
+	margin: 0 0 0 5px;
+}

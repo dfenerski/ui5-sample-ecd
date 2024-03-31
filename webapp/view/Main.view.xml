@@ -4,22 +4,98 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
+    xmlns:md="cc.md"
     xmlns:ecdsample="com.github.dfenerski.ui5_sample_ecd.controls"
     core:require="{
 		formatter: 'com/github/dfenerski/ui5_sample_ecd/model/formatter'
 	}">
-
     <Page
-        title="{i18n>appTitle}"
-        id="page">
+        title="{i18n>appTitle}">
         <content>
-            <ecdsample:Container items="{path: 'local>/items', templateShareable: false}">
-                <ecdsample:items>
-                    <ecdsample:Item text="{local>text}" />
-                </ecdsample:items>
-            </ecdsample:Container>
-            <Button text="Add item" press=".handleItemAddition" />
-            <Button text="Remove item" press=".handleItemRemoval" />
+            <Panel width="auto" height="500px" class="sapUiResponsiveMargin" accessibleRole="Region">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Button text="Force rerender" press=".handleForceRerender" />
+                        <Button text="Add item" press=".handleItemAddition" />
+                        <Button text="Remove item" press=".handleItemRemoval" />
+                        <Button text="Reset model" press=".handleResetModel" />
+                        <Button text="Reset logs" press=".handleResetLogs" />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <content>
+                    <HBox justifyContent="Center">
+                        <VBox>
+                            <Title text="{i18n>titleApiVersion2}" />
+                            <HBox class="contentBox1">
+                                <List
+                                    backgroundDesign="Transparent"
+                                    items="{log>/v2/}"
+                                    noDataText="{i18n>noLogDataText}">
+                                    <CustomListItem>
+                                        <MessageStrip
+                                            text="{log>message}"
+                                            type="{log>type}"
+                                            showIcon="true">
+                                        </MessageStrip>
+                                    </CustomListItem>
+                                    <layoutData>
+                                        <FlexItemData
+                                            minWidth="400px"
+                                            maxWidth="400px"
+                                        >
+                                        </FlexItemData>
+                                    </layoutData>
+                                </List>
+                                <ecdsample:ContainerV2
+                                    id="containerV2"
+                                    items="{path: 'local>/items', templateShareable: false}">
+                                    <ecdsample:items>
+                                        <ecdsample:ItemV2 text="{local>text}" />
+                                    </ecdsample:items>
+                                </ecdsample:ContainerV2>
+                            </HBox>
+                        </VBox>
+                        <VBox>
+                            <Title text="{i18n>titleApiVersion4}" />
+                            <HBox class="contentBox2">
+                                <ecdsample:ContainerV4
+                                    id="containerV4"
+                                    items="{path: 'local>/items', templateShareable: false}">
+                                    <ecdsample:items>
+                                        <ecdsample:ItemV4 text="{local>text}" />
+                                    </ecdsample:items>
+                                </ecdsample:ContainerV4>
+                                <List
+                                    backgroundDesign="Transparent"
+                                    items="{log>/v4/}"
+                                    noDataText="{i18n>noLogDataText}">
+                                    <CustomListItem>
+                                        <MessageStrip
+                                            text="{log>message}"
+                                            type="{log>type}"
+                                            showIcon="true">
+                                        </MessageStrip>
+                                    </CustomListItem>
+                                    <layoutData>
+                                        <FlexItemData
+                                            minWidth="400px"
+                                            maxWidth="400px"
+                                        >
+                                        </FlexItemData>
+                                    </layoutData>
+                                </List>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </content>
+            </Panel>
+            <Panel
+                headerText="{i18n>panelHeaderDocumentation}"
+                width="auto" height="500px"
+                class="sapUiResponsiveMargin"
+                accessibleRole="Region">
+                <md:Markdown fromFile="./docs/info.md" />
+            </Panel>
         </content>
     </Page>
 
