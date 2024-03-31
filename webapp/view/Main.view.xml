@@ -10,8 +10,7 @@
 		formatter: 'com/github/dfenerski/ui5_sample_ecd/model/formatter'
 	}">
     <Page
-        title="{i18n>appTitle}"
-        enableScrolling="true">
+        title="{i18n>appTitle}">
         <content>
             <Panel width="auto" height="500px" class="sapUiResponsiveMargin" accessibleRole="Region">
                 <headerToolbar>
@@ -46,7 +45,6 @@
                                     </layoutData>
                                 </List>
                                 <ecdsample:ContainerV2
-                                    id="containerV2"
                                     items="{path: 'local>/items', templateShareable: false}">
                                     <ecdsample:items>
                                         <ecdsample:ItemV2 text="{local>text}" />
@@ -58,7 +56,6 @@
                             <Title text="Renderer API Version 4" />
                             <HBox class="contentBox2">
                                 <ecdsample:ContainerV4
-                                    id="containerV4"
                                     items="{path: 'local>/items', templateShareable: false}">
                                     <ecdsample:items>
                                         <ecdsample:ItemV4 text="{local>text}" />
