@@ -25,10 +25,12 @@
                 <content>
                     <HBox justifyContent="Center">
                         <VBox>
-                            <Title text="Renderer API Version 2" />
+                            <Title text="{i18n>titleApiVersion2}" />
                             <HBox class="contentBox1">
-                                <List backgroundDesign="Transparent" items="{log>/v2/}"
-                                    noDataText="Interact with the UI!">
+                                <List
+                                    backgroundDesign="Transparent"
+                                    items="{log>/v2/}"
+                                    noDataText="{i18n>noLogDataText}">
                                     <CustomListItem>
                                         <MessageStrip
                                             text="{log>message}"
@@ -54,7 +56,7 @@
                             </HBox>
                         </VBox>
                         <VBox>
-                            <Title text="Renderer API Version 4" />
+                            <Title text="{i18n>titleApiVersion4}" />
                             <HBox class="contentBox2">
                                 <ecdsample:ContainerV4
                                     id="containerV4"
@@ -63,8 +65,10 @@
                                         <ecdsample:ItemV4 text="{local>text}" />
                                     </ecdsample:items>
                                 </ecdsample:ContainerV4>
-                                <List backgroundDesign="Transparent" items="{log>/v4/}"
-                                    noDataText="Interact with the UI!">
+                                <List
+                                    backgroundDesign="Transparent"
+                                    items="{log>/v4/}"
+                                    noDataText="{i18n>noLogDataText}">
                                     <CustomListItem>
                                         <MessageStrip
                                             text="{log>message}"
@@ -85,8 +89,11 @@
                     </HBox>
                 </content>
             </Panel>
-            <Panel headerText="Documentation / Explanation" width="auto" height="500px"
-                class="sapUiResponsiveMargin" accessibleRole="Region">
+            <Panel
+                headerText="{i18n>panelHeaderDocumentation}"
+                width="auto" height="500px"
+                class="sapUiResponsiveMargin"
+                accessibleRole="Region">
                 <md:Markdown fromFile="./docs/info.md" />
             </Panel>
         </content>

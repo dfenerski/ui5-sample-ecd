@@ -17,8 +17,8 @@
         "icons": {},
         "deviceTypes": {
             "desktop": true,
-            "tablet": true,
-            "phone": true
+            "tablet": false,
+            "phone": false
         }
     },
 
@@ -53,7 +53,9 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "com.github.dfenerski.ui5_sample_ecd.i18n.i18n"
+                    "bundleName": "com.github.dfenerski.ui5_sample_ecd.i18n.i18n",
+                    "supportedLocales": ["en"],
+                    "fallbackLocale": "en"
                 }
             }
         },
