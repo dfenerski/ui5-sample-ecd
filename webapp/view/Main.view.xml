@@ -45,6 +45,7 @@
                                     </layoutData>
                                 </List>
                                 <ecdsample:ContainerV2
+                                    id="containerV2"
                                     items="{path: 'local>/items', templateShareable: false}">
                                     <ecdsample:items>
                                         <ecdsample:ItemV2 text="{local>text}" />
@@ -56,6 +57,7 @@
                             <Title text="Renderer API Version 4" />
                             <HBox class="contentBox2">
                                 <ecdsample:ContainerV4
+                                    id="containerV4"
                                     items="{path: 'local>/items', templateShareable: false}">
                                     <ecdsample:items>
                                         <ecdsample:ItemV4 text="{local>text}" />
