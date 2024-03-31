@@ -1,22 +1,29 @@
 .container {
-	width: 200px;
-	padding: 5px;
 	background-color: #fff;
 	border-radius: 5px;
+	width: 200px;
+	padding: 5px;
 	margin: 0 15px 0 15px;
-	height: fit-content;
 }
 
-.contentBox1 {
+.contentBox {
 	background-color: hsl(210, 23%, 76%);
 	padding: 5px;
 	border-radius: 5px;
+}
+
+.contentBox1-margin {
 	margin: 0 5px 0 0;
 }
 
-.contentBox2 {
-	background-color: hsl(210, 23%, 76%);
-	padding: 5px;
-	border-radius: 5px;
+.contentBox2-margin {
 	margin: 0 0 0 5px;
+}
+
+/*
+ * Remove fixed bottom border color (theme based) even in transparent design (visible due to custom list items & background)
+ * origin: sapMLIB
+ */
+.sapMLIB-border-color-fix li {
+	border-bottom: 1px solid transparent
 }
