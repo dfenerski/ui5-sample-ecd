@@ -23,15 +23,15 @@ export default class Main extends BaseController {
         );
     }
 
-    public resetLogger() {
+    public handleResetLogger() {
         CustomLogger.reset();
     }
 
-    public resetModel() {
+    public handleResetModel() {
         this.setModel(models.createLocalModel(), "local");
     }
 
-    public handleRender() {
+    public handleForceRerender() {
         this.byId("containerV2").rerender();
         this.byId("containerV4").rerender();
     }
