@@ -20,14 +20,14 @@ export default class ContainerV2 extends Control {
     public static readonly renderer = {
         apiVersion: 2,
         render(rm: RenderManager, container: ContainerV2): void {
-            CustomLogger.addMessage({
+            CustomLogger.addV2Message({
                 message: "CONTAINER:RENDER: entry",
                 type: MessageType.Warning,
             });
             rm.openStart("div", container).class("container");
             rm.openEnd();
             container.getItems().forEach((item: Item) => {
-                CustomLogger.addMessage({
+                CustomLogger.addV2Message({
                     message: `CONTAINER:RENDER: item: ${item.getId()}`,
                     type: MessageType.Warning,
                 });
@@ -43,12 +43,12 @@ export default class ContainerV2 extends Control {
      * This override does nothing but is useful to have it explicitly defined when doing custom aggregation stuff
      */
     public updateItems() {
-        CustomLogger.addMessage({ message: "CONTAINER: updateItems()" });
+        CustomLogger.addV2Message({ message: "CONTAINER: updateItems()" });
         return this.updateAggregation("items", ChangeReason.Change, {});
     }
 
     public insertItem(item: Item, index: number): this {
-        CustomLogger.addMessage({ message: "CONTAINER: insertItem()" });
+        CustomLogger.addV2Message({ message: "CONTAINER: insertItem()" });
         this.insertAggregation("items", item, index, true);
         // Obtain DOM ref
         const domRef = this.getDomRef();
@@ -67,7 +67,7 @@ export default class ContainerV2 extends Control {
     }
 
     public removeItem(item: Item | number | string): Item | null {
-        CustomLogger.addMessage({ message: "CONTAINER: removeItem()" });
+        CustomLogger.addV2Message({ message: "CONTAINER: removeItem()" });
         const removedItem = <Item | null>(
             this.removeAggregation("items", item, true)
         );
@@ -84,7 +84,7 @@ export default class ContainerV2 extends Control {
     }
 
     public override onAfterRendering(event: JQuery.Event): void {
-        CustomLogger.addMessage({ message: "CONTAINER: onAfterRendering()" });
+        CustomLogger.addV2Message({ message: "CONTAINER: onAfterRendering()" });
         super.onAfterRendering(event);
     }
 }

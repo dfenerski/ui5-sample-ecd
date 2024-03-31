@@ -6,11 +6,9 @@ type Message = {
     type?: MessageType;
 };
 
-export enum Version {
-    V2 = "/v2",
-    V4 = "/v4",
-}
-
+/**
+ * @namespace com.github.dfenerski.ui5_sample_ecd.util
+ */
 class CustomUiLogger {
     public jsonModel: JSONModel;
 
@@ -21,12 +19,20 @@ class CustomUiLogger {
         });
     }
 
-    public addMessage(content: Message, version: Version = Version.V2) {
+    public addV2Message(content: Message) {
         if (!content?.type) {
             content.type = MessageType.Information;
         }
-        const arr = this.jsonModel.getProperty(version) as Message[];
-        this.jsonModel.setProperty(version, arr.concat(content));
+        const arr = this.jsonModel.getProperty("/v2") as Message[];
+        this.jsonModel.setProperty("/v2", arr.concat(content));
+    }
+
+    public addV4Message(content: Message) {
+        if (!content?.type) {
+            content.type = MessageType.Information;
+        }
+        const arr = this.jsonModel.getProperty("/v4") as Message[];
+        this.jsonModel.setProperty("/v4", arr.concat(content));
     }
 
     public reset() {
