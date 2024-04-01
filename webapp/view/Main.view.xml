@@ -26,11 +26,12 @@
                     <HBox justifyContent="Center">
                         <VBox>
                             <Title text="{i18n>titleApiVersion2}" />
-                            <HBox class="contentBox1">
+                            <HBox class="contentBox contentBox1-margin">
                                 <List
                                     backgroundDesign="Transparent"
                                     items="{log>/v2/}"
-                                    noDataText="{i18n>noLogDataText}">
+                                    noDataText="{i18n>noLogDataText}"
+                                    class="sapMLIB-border-color-fix">
                                     <CustomListItem>
                                         <MessageStrip
                                             text="{log>message}"
@@ -53,7 +54,7 @@
                         </VBox>
                         <VBox>
                             <Title text="{i18n>titleApiVersion4}" />
-                            <HBox class="contentBox2">
+                            <HBox class="contentBox contentBox2-margin">
                                 <ecd:ContainerV4
                                     id="containerV4"
                                     items="{path: 'local>/items', templateShareable: false}">
@@ -62,7 +63,8 @@
                                 <List
                                     backgroundDesign="Transparent"
                                     items="{log>/v4/}"
-                                    noDataText="{i18n>noLogDataText}">
+                                    noDataText="{i18n>noLogDataText}"
+                                    class="sapMLIB-border-color-fix">
                                     <CustomListItem>
                                         <MessageStrip
                                             text="{log>message}"
