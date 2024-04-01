@@ -35,13 +35,13 @@
                                         <MessageStrip
                                             text="{log>message}"
                                             type="{log>type}"
-                                            showIcon="true"></MessageStrip>
+                                            showIcon="true" />
                                     </CustomListItem>
                                     <layoutData>
                                         <FlexItemData
                                             minWidth="400px"
                                             maxWidth="400px"
-                                        ></FlexItemData>
+                                        />
                                     </layoutData>
                                 </List>
                                 <ecd:ContainerV2
@@ -67,13 +67,13 @@
                                         <MessageStrip
                                             text="{log>message}"
                                             type="{log>type}"
-                                            showIcon="true"></MessageStrip>
+                                            showIcon="true" />
                                     </CustomListItem>
                                     <layoutData>
                                         <FlexItemData
                                             minWidth="400px"
                                             maxWidth="400px"
-                                        ></FlexItemData>
+                                        />
                                     </layoutData>
                                 </List>
                             </HBox>
